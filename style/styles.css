@@ -1,0 +1,10 @@
+@import url(tripoli.base.css); 
+@import url(plugins/tripoli.visual.css); 
+@import url(plugins/tripoli.type.css);
+@import url(plugins/tripoli.layout.css);
+@import url(plugins/tabs.css);
+
+.job_box {
+	border:1px solid black;
+	margin-bottom:2px;
+}

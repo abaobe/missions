@@ -1,11 +1,8 @@
 <?php $this->load->view('header'); ?>
-<body>
+<body class="l2">
 	<div id="container">
 		<?php $this->load->view('nav'); ?>
-		<div id="sidebar">
-			<p><a href="jobs/create">Create New Job</a></p>
-		</div>
-		<div id="content">
+		<div id="primary">
 			<?php
 			foreach($jobs as $row):
 			?>
@@ -21,6 +18,9 @@
 				</div>
 			</div>
 			<?php endforeach; ?>
+		</div>
+		<div id="secondary">
+			<p><a href="jobs/create">Create New Job</a></p>
 		</div>
 	</div>
 </body>
