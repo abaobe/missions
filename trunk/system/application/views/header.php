@@ -4,8 +4,9 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<title>Unnamed&mdash;{title}</title>
-	<link rel="stylesheet" type="text/css" href="/style/style.css" />
-	<script src="/system/javascripts/prototype.js" type="text/javascript"></script>
-	<script src="/system/javascripts/scriptaculous.js" type="text/javascript"></script>
+	<link href="/style/styles.css" type="text/css" rel="stylesheet"> 
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="/style/styles.ie.css"><![endif]-->
+	<script src="/javascript/prototype.js" type="text/javascript"></script>
+	<script src="/javascript/scriptaculous.js" type="text/javascript"></script>
 <?php session_start(); ?>
 </head>

@@ -4,14 +4,7 @@ class User extends Controller {
 	function index()
 	{
 		$this->load->library('parser');
-		
-		function addUserToJob($user, $job){
-			$info = array(
-							'user_id' => $user ,
-							'job_id' => $job
-						);
-			$this->db->insert('work', $info);
-		}
+		$this->load->library('ajax');
 		
 		$query = $this->db->get('users');
 		$users = array();
@@ -35,6 +28,8 @@ class User extends Controller {
 		$data['jobs'] = $jobs;
 		$data['users'] = $users;
 		$data['title'] = "User List";
+		
+		
 		
 		$this->parser->parse('userview', $data);
 	}
@@ -136,6 +131,30 @@ class User extends Controller {
 				echo "<p>".$user->name."</p>";
 			}
 	    }
+	}
+	
+	function addUserToJob($user,$job)
+	{
+		$userresult = $this->db->query('select * from users where name = "'.$user.'";');
+		$userid;
+		foreach($userresult->result() as $result)
+		{
+			$userid = $result->id;
+		}
+		
+		$ifresult = $this->db->query('select * from work where user_id ='.$userid.' and job_id='.$job.';');
+		
+		if($ifresult->result()) {
+			
+		} 
+		else {
+			$info = array(
+							'user_id' => $userid ,
+							'job_id' => $job
+						);
+			$this->db->insert('work', $info);
+		}
+		
 	}
 	
 }
