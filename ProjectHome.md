@@ -1,0 +1,1 @@
+A system for assigning employees to projects and keeping project information up to date.
